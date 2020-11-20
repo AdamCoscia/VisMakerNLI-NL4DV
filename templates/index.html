@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <title>NL4DV Inspector</title>
+    <link rel="shortcut icon" type="image/x-icon" href="static/img/favicon.ico" />
+    <!--Vendor CSS files-->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.6/css/bootstrap.min.css"
+        rel="stylesheet" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.6/css/bootstrap-theme.css"
+        rel="stylesheet" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.1/css/font-awesome.min.css" rel="stylesheet" />
+    <link href="https://cdn.datatables.net/1.10.20/css/jquery.dataTables.min.css" />
+    <link href="https://cdn.datatables.net/rowgroup/1.1.1/css/rowGroup.dataTables.min.css" />
+    <link href="https://cdn.jsdelivr.net/npm/json-tree-viewer@0.0.1/libs/jsonTree/jsonTree.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.51.0/codemirror.min.css" />
+    <!--Custom CSS files-->
+    <link href="static/css/style.css" rel="stylesheet" />
+</head>
+
+<body>
+    <div class="container-fluid">
+        <!-- Title -->
+        <center>
+            <h3>Test your queries with NL4DV</h3>
+        </center>
+
+        <!-- Input -->
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2">
+                <div class="form-group text-center" style="position: relative">
+                    <div class="input-group">
+                        <input type="search" class="form-control" id="queryInput"
+                            placeholder="Type your query here..." />
+                        <span class="input-group-btn">
+                            <button class="btn btn-primary" type="button" id="queryBtn">
+                                <span class="glyphicon glyphicon-play" aria-hidden="true"></span>
+                                &nbsp;&nbsp;Execute
+                            </button>
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Table -->
+        <div class="row">
+            <div class="col-md-10 col-md-offset-1">
+                <div class="panel panel-default">
+                    <!-- Header -->
+                    <div class="panel-heading white-bg">
+                        <div class="panel-title">Data</div>
+                    </div>
+                    <!-- Content -->
+                    <div class="panel-body p-none" style="height: calc(50vh - 125px); overflow: auto">
+                        <div id="tableContainer"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Output -->
+        <div class="container-fluid">
+            <div class="row">
+                <!-- JSON -->
+                <div class="col-md-4">
+                    <div class="panel panel-default">
+                        <!-- Header -->
+                        <div class="panel-heading white-bg">
+                            <div class="panel-title">JSON Response</div>
+                        </div>
+                        <!-- Content -->
+                        <div class="panel-body p-none" style="height: calc(50vh - 125px); overflow: auto">
+                            <div id="responseContainer"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Parsed -->
+                <div class="col-md-8">
+                    <div class="panel panel-default">
+                        <!-- Header -->
+                        <div class="panel-heading white-bg">
+                            <div class="panel-title">Parsed Response</div>
+                        </div>
+                        <!-- Content -->
+                        <div class="panel-body" style="height: calc(50vh - 125px); overflow: auto">
+                            <div id="parsedResponse"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <br />
+
+        <div class="loadingModal"></div>
+    </div>
+</body>
+
+<!--JS files-->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.6/js/bootstrap.min.js"></script>
+<script src="https://cdn.datatables.net/1.10.20/js/jquery.dataTables.min.js"></script>
+<script src="https://cdn.datatables.net/rowgroup/1.1.1/js/dataTables.rowGroup.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/json-tree-viewer@0.0.1/libs/jsonTree/jsonTree.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.51.0/codemirror.min.js"></script>
+<script src="https://codemirror.net/addon/edit/matchbrackets.js"></script>
+<script src="https://codemirror.net/mode/javascript/javascript.js"></script>
+<script src="https://d3js.org/d3.v6.min.js"></script>
+<script src="static/js/ui.js" z></script>
+<script src="static/js/main.js"></script>
+
+</html>
